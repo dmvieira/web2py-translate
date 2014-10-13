@@ -12,7 +12,7 @@ all:
 
 # Run a dev server without GUI, where the admin password is '123'.
 run:
-	python $(WEB2PY)/web2py.py --nogui -p 8000 -a 123
+	python $(TARGET_WEB2PY_DIR)/web2py.py --nogui -p 8000 -a 123
 
 uninstall:
 	rm -fr $(TARGET_WEB2PY_DIR)
@@ -20,7 +20,7 @@ uninstall:
 install:
 	$(MAKE) install -C site-packages
 	@echo 'Make app symlinks...'
-	ln -s $(abspath applications/web2py-translate) \
-		$(abspath $(TARGET_WEB2PY_DIR)/applications/web2py-translate)
+	ln -s $(abspath applications/web2py_translate) \
+		$(abspath $(TARGET_WEB2PY_DIR)/applications/web2py_translate)
 	ln -s $(abspath requirements.txt) \
 		$(abspath $(TARGET_WEB2PY_DIR)/requirements.txt)
