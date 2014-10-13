@@ -1,0 +1,5 @@
+databases/
+errors/
+cache/
+sessions/
+cron/
