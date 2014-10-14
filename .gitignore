@@ -4,3 +4,4 @@ cache/
 sessions/
 cron/
 web2py/
+.idea/

@@ -1,7 +1,9 @@
 # Installs web2py and makes symlinks.
 
-ROOT_DIR = $(abspath ./)
-export ROOT_DIR
+CLIENT_ID = #your client id
+export CLIENT_ID
+CLIENT_SECRET = #your secret from azure
+export CLIENT_SECRET
 TARGET_WEB2PY_DIR = $(abspath web2py)
 export TARGET_WEB2PY_DIR
 
