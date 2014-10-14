@@ -5,6 +5,7 @@ export CLIENT_ID
 CLIENT_SECRET = # your secret from azure
 export CLIENT_SECRET
 ROOT_DIR = $(abspath ./)
+export ROOT_DIR
 TARGET_WEB2PY_DIR = $(abspath web2py)
 export TARGET_WEB2PY_DIR
 
