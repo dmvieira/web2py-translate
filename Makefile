@@ -1,10 +1,10 @@
 # Installs web2py and makes symlinks.
 
-CLIENT_ID = #your client id from bing
+CLIENT_ID = # your client id from azure
 export CLIENT_ID
 CLIENT_SECRET = # your secret from azure
 export CLIENT_SECRET
-ROOT_DIR = $(abspath .)
+ROOT_DIR = $(abspath ./)
 TARGET_WEB2PY_DIR = $(abspath web2py)
 export TARGET_WEB2PY_DIR
 
