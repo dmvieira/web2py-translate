@@ -33,7 +33,7 @@ def translate():
 
     fields = list()
     for key in session.file:
-        fields.append(Field(key,
+        fields.append(Field(key, 'text',
                             default=session.file[key],
                             label=XML('<br>'.join(textwrap.wrap(base64.standard_b64decode(key),20)))
 
