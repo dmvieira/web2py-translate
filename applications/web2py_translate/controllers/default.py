@@ -17,7 +17,7 @@ def index():
 
     response.flash = T("Welcome to Web2py Translate!")
 
-    form = SQLFORM.factory(Field('file', 'text'))
+    form = SQLFORM.factory(Field('file', 'text', requires=IS_NOT_EMPTY()))
     if form.process().accepted:
         try:
             session.file = dict()
@@ -35,7 +35,7 @@ def translate():
     for key in session.file:
         fields.append(Field(key,
                             default=session.file[key],
-                            label=base64.standard_b64decode(key)))
+                            label=XML('<br>'.join(textwrap.wrap(base64.standard_b64decode(key),20)))
 
     form = SQLFORM.factory(*fields)
 
