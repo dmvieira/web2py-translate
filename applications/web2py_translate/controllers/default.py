@@ -23,19 +23,20 @@ def index():
             session.file = dict()
             lang_file = eval(form.vars.file)
             for key in lang_file:
-                session.file[base64.standard_b64encode(key)] = lang_file[key]
+                if key:
+                    session.file[base64.standard_b64encode(key)] = lang_file[key]
         except:
             response.flash = T("Wrong file format... Try again")
         redirect(URL('translate'))
     return dict(form=form)
 
 def translate():
-
+    import textwrap
     fields = list()
     for key in session.file:
         fields.append(Field(key, 'text',
                             default=session.file[key],
-                            label=XML('<br>'.join(textwrap.wrap(base64.standard_b64decode(key),20)))
+                            label=XML('<br>'.join(textwrap.wrap(base64.standard_b64decode(key),100)))))
 
     form = SQLFORM.factory(*fields)
 
